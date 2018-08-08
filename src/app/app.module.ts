@@ -3,9 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 
-import { WeatherScreenComponent } from './weatherScreen';
-import { WeatherPanelComponent } from './weatherPanel';
 import { SecondsToDatePipe } from './secondsToDatePipe';
+import { WeatherPanelComponent } from './weatherPanel';
+import { WeatherScreenComponent } from './weatherScreen';
 
 export const firebaseConfig = {
   apiKey: '<your-key>',
