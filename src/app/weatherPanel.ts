@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Observable } from 'rxjs';
 
@@ -6,15 +6,13 @@ import { Observable } from 'rxjs';
   selector: 'weather-panel',
   templateUrl: './weatherPanel.html'
 })
-export class WeatherPanelComponent implements OnInit {
-  @Input() city: string;
+export class WeatherPanelComponent {
+  @Input() city = '';
 
   hourly: Observable<any[]>;
   currently: Observable<any>;
 
-  constructor(private afDb: AngularFireDatabase) { }
-
-  ngOnInit() {
+  constructor(private afDb: AngularFireDatabase) {
     this.hourly = this.afDb.list(this.city + '/hourly/data',
       ref => ref.limitToLast(10)).valueChanges();
 
