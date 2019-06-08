@@ -17,7 +17,11 @@ export const firebaseConfig = {
 };
 
 @NgModule({
-  declarations: [WeatherScreenComponent, WeatherPanelComponent, SecondsToDatePipe],
+  declarations: [
+    WeatherScreenComponent,
+    WeatherPanelComponent,
+    SecondsToDatePipe
+  ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(firebaseConfig),
@@ -25,4 +29,4 @@ export const firebaseConfig = {
   ],
   bootstrap: [WeatherScreenComponent]
 })
-export class AppModule { }
+export class AppModule {}

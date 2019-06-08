@@ -13,10 +13,12 @@ export class WeatherPanelComponent {
   currently: Observable<any>;
 
   constructor(private afDb: AngularFireDatabase) {
-    this.hourly = this.afDb.list(this.city + '/hourly/data',
-      ref => ref.limitToLast(10)).valueChanges();
+    this.hourly = this.afDb
+      .list(this.city + '/hourly/data', ref => ref.limitToLast(10))
+      .valueChanges();
 
-    this.currently = this.afDb.object(this.city + '/currently')
+    this.currently = this.afDb
+      .object(this.city + '/currently')
       .valueChanges();
   }
 }
