@@ -8,5 +8,6 @@ export class SecondsToDatePipe implements PipeTransform {
     if (input) {
       return new Date(input * 1000);
     }
+    return undefined;
   }
 }
